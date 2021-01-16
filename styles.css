@@ -1,0 +1,20 @@
+.vertical-center {
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.refresh_me_title{
+    padding-top: 3rem;
+    color: green;
+}
+
+.player_title{
+    color: green;
+}
+
+body{
+    background-color: #454343;
+}
