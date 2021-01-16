@@ -18,23 +18,54 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 
     <title>Dicee Game</title>
   </head>
   <body>
     <center>
-      <h1 class="refresh_me_title">Refresh Me</h1>
+      <h1 class="refresh_me_title" id="refresh_me_title_id">Refresh Me</h1>
       <div class="row vertical-center">
-      <div class="col-md-6">
-        <h3 class="player_title">Player 1</h3>
-        <img src="images/dice1.png" alt="player 1 dicee" />
+        <div class="col-md-6">
+          <h3 class="player_title">Player 1</h3>
+          <img
+            class="img_payer_1"
+            id="img_payer_1_id"
+            src="images/dice1.png"
+            alt="player 1 dicee"
+          />
+        </div>
+        <div class="col-md-6">
+          <h3 class="player_title">Player 2</h3>
+          <img
+            class="img_payer_2"
+            id="img_payer_2_id"
+            src="images/dice1.png"
+            alt="player 2 dicee"
+          />
+        </div>
       </div>
-      <div class="col-md-6">
-        <h3 class="player_title">Player 2</h3>
-        <img src="images/dice1.png" alt="player 1 dicee" />
-      </div>
-    </div>
     </center>
+
+    <script>
+      function getRandNumber(imgId) {
+        var randNumber = Math.floor(Math.random() * 6 + 1);
+        document.getElementById(imgId).src =
+          "images/dice" + randNumber + ".png";
+        return randNumber;
+      }
+
+      var playerScore1 = getRandNumber("img_payer_1_id");
+      var playerScore2 = getRandNumber("img_payer_2_id");
+
+      var titleText=document.getElementById("refresh_me_title_id");
+      if(playerScore1>playerScore2){
+        titleText.innerText="Player 1 wins";
+      }else if(playerScore1<playerScore2){
+        titleText.innerText="Player 2 wins";
+      }else{
+        titleText.innerText="Draw";
+      }
+    </script>
   </body>
 </html>
