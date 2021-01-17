@@ -15,6 +15,10 @@
     color: green;
 }
 
+.refresh_note{
+    color: red;
+}
+
 body{
     background-color: #454343;
 }
